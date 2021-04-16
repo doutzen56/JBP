@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java-boilerplate.iml" filepath="$PROJECT_DIR$/java-boilerplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbp-admin/jbp-admin.iml" filepath="$PROJECT_DIR$/jbp-admin/jbp-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbp-api/jbp-api.iml" filepath="$PROJECT_DIR$/jbp-api/jbp-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbp-common/jbp-common.iml" filepath="$PROJECT_DIR$/jbp-common/jbp-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbp-dynamic-datasource/jbp-dynamic-datasource.iml" filepath="$PROJECT_DIR$/jbp-dynamic-datasource/jbp-dynamic-datasource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbp-generator/jbp-generator.iml" filepath="$PROJECT_DIR$/jbp-generator/jbp-generator.iml" />
+    </modules>
+  </component>
+</project>

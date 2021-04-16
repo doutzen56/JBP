@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jbp-admin" />
+        <module name="jbp-api" />
+        <module name="jbp-dynamic-datasource" />
+        <module name="jbp-generator" />
+        <module name="jbp-common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="java-boilerplate" target="1.8" />
+      <module name="jbp-admin" target="1.8" />
+      <module name="jbp-api" target="1.8" />
+      <module name="jbp-common" target="1.8" />
+      <module name="jbp-dynamic-datasource" target="1.8" />
+      <module name="jbp-generator" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="jbp-admin" options="-parameters" />
+      <module name="jbp-api" options="-parameters" />
+      <module name="jbp-common" options="-parameters" />
+      <module name="jbp-dynamic-datasource" options="-parameters" />
+      <module name="jbp-generator" options="-parameters" />
+    </option>
+  </component>
+</project>
