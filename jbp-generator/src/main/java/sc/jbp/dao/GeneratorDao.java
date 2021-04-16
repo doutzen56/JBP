@@ -1,10 +1,4 @@
-/**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
+
 
 package sc.jbp.dao;
 
@@ -14,7 +8,7 @@ import java.util.Map;
 /**
  * 数据库接口
  *
- * @author Mark sunlightcs@gmail.com
+ *  tzen@e-veb.com
  */
 public interface GeneratorDao {
     List<Map<String, Object>> queryList(Map<String, Object> map);

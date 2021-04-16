@@ -1,10 +1,4 @@
-/**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
+    
 
 package sc.jbp.common.utils;
 
@@ -14,7 +8,7 @@ import java.util.Map;
 /**
  * 返回数据
  *
- * @author Mark sunlightcs@gmail.com
+ *  tzen@e-veb.com
  */
 public class R extends HashMap<String, Object> {
 	private static final long serialVersionUID = 1L;

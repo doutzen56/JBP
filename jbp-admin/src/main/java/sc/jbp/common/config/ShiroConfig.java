@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
 
 package sc.jbp.common.config;
 
@@ -29,7 +22,7 @@ import java.util.Map;
 /**
  * Shiro的配置文件
  *
- * @author Mark sunlightcs@gmail.com
+ *  tzen@e-veb.com
  */
 @Configuration
 public class ShiroConfig {
@@ -38,7 +31,7 @@ public class ShiroConfig {
      * 单机环境，session交给shiro管理
      */
     @Bean
-    @ConditionalOnProperty(prefix = "renren", name = "cluster", havingValue = "false")
+    @ConditionalOnProperty(prefix = "jbp", name = "cluster", havingValue = "false")
     public DefaultWebSessionManager sessionManager(@Value("${jbp.globalSessionTimeout:3600}") long globalSessionTimeout){
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
         sessionManager.setSessionValidationSchedulerEnabled(true);
@@ -53,7 +46,7 @@ public class ShiroConfig {
      * 集群环境，session交给spring-session管理
      */
     @Bean
-    @ConditionalOnProperty(prefix = "renren", name = "cluster", havingValue = "true")
+    @ConditionalOnProperty(prefix = "jbp", name = "cluster", havingValue = "true")
     public ServletContainerSessionManager servletContainerSessionManager() {
         return new ServletContainerSessionManager();
     }

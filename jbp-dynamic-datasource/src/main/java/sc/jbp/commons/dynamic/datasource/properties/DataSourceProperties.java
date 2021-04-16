@@ -11,7 +11,7 @@ package sc.jbp.commons.dynamic.datasource.properties;
 /**
  * 多数据源属性
  *
- * @author Mark sunlightcs@gmail.com
+ *  tzen@e-veb.com
  * @since 1.0.0
  */
 public class DataSourceProperties {

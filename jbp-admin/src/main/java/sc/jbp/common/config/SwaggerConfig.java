@@ -1,10 +1,4 @@
-/**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
+    
 
 package sc.jbp.common.config;
 
@@ -22,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * Swagger配置
  *
- * @author Mark sunlightcs@gmail.com
+ *  tzen@e-veb.com
  */
 @Configuration
 @EnableSwagger2
@@ -43,9 +37,9 @@ public class SwaggerConfig{
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("人人开源")
+            .title("jbp")
             .description("jbp-admin文档")
-            .termsOfServiceUrl("https://www.renren.io")
+            .termsOfServiceUrl("https://github.com/doutzen56")
             .version("4.0.0")
             .build();
     }

@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * 多数据源属性
  *
- * @author Mark sunlightcs@gmail.com
+ *  tzen@e-veb.com
  * @since 1.0.0
  */
 @ConfigurationProperties(prefix = "dynamic")
