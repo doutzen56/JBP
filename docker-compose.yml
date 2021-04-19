@@ -1,12 +1,12 @@
 version: '2'
 services:
-  renren-admin:
+  jbp-admin:
     image: jbp/admin
     ports:
       - "8080:8080"
     environment:
       - spring.profiles.active=dev
-  renren-api:
+  jbp-api:
     image: jbp/api
     ports:
       - "8081:8081"
