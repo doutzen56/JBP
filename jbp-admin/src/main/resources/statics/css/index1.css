@@ -22,7 +22,7 @@
 	position: relative;
 }
 .header-demo .layui-nav .layui-nav-item:hover{
-	border-bottom-color: #000;
+	border-bottom-color: #000000;
 }
 .header-demo .layui-nav .layui-this{background-color: #000;/* #5FB878 */}
 .header-demo .layui-nav .layui-nav-item a:hover, 

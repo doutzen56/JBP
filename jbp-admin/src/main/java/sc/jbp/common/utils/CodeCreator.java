@@ -1,6 +1,6 @@
 package sc.jbp.common.utils;
 
-import sc.jbp.common.dto.KaptchaCode;
+import sc.jbp.common.dto.KaptchaCodeDTO;
 
 /**
  * 数学运算验证码
@@ -10,8 +10,8 @@ import sc.jbp.common.dto.KaptchaCode;
  */
 public class CodeCreator {
 
-    public KaptchaCode CodeCreator(String source) {
-        KaptchaCode result = new KaptchaCode();
+    public KaptchaCodeDTO CodeCreator(String source) {
+        KaptchaCodeDTO result = new KaptchaCodeDTO();
         String first = source.substring(0, 2);
         String second = source.substring(2, 3);
         int left = Integer.valueOf(first).intValue();

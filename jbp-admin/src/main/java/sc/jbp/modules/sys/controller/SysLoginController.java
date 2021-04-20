@@ -5,7 +5,7 @@ package sc.jbp.modules.sys.controller;
 
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
-import sc.jbp.common.dto.KaptchaCode;
+import sc.jbp.common.dto.KaptchaCodeDTO;
 import sc.jbp.common.utils.CodeCreator;
 import sc.jbp.common.utils.R;
 import sc.jbp.modules.sys.shiro.ShiroUtils;
@@ -42,7 +42,7 @@ public class SysLoginController {
 
         //生成文字验证码
         String text = producer.createText();
-        KaptchaCode source = creator.CodeCreator(text);
+        KaptchaCodeDTO source = creator.CodeCreator(text);
 
         //生成图片验证码
         BufferedImage image = producer.createImage(source.getCodeValue());

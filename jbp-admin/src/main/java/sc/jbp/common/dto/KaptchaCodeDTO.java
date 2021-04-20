@@ -8,7 +8,7 @@ import lombok.Data;
  * 2021/4/17 15:41
  */
 @Data
-public class KaptchaCode {
+public class KaptchaCodeDTO {
     private String codeKey;
     private String codeValue;
 }
