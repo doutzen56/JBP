@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.common.config;
 
@@ -12,8 +12,8 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * Redis配置
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Configuration
 public class RedisConfig {

@@ -11,8 +11,8 @@ import java.util.Map;
 
 /**
  * 部门管理
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Mapper
 public interface SysDeptDao extends BaseMapper<SysDeptEntity> {
@@ -21,7 +21,8 @@ public interface SysDeptDao extends BaseMapper<SysDeptEntity> {
 
     /**
      * 查询子部门ID列表
-     * @param parentId  上级部门ID
+     *
+     * @param parentId 上级部门ID
      */
     List<Long> queryDetpIdList(Long parentId);
 

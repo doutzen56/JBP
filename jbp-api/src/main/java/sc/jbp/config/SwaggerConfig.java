@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.config;
 
@@ -25,29 +25,29 @@ public class SwaggerConfig {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-            .apiInfo(apiInfo())
-            .select()
-            //加了ApiOperation注解的类，才生成接口文档
-            .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-            //包下的类，才生成接口文档
-            //.apis(RequestHandlerSelectors.basePackage("io.jbpntroller"))
-            .paths(PathSelectors.any())
-            .build()
-            .securitySchemes(security());
+                .apiInfo(apiInfo())
+                .select()
+                //加了ApiOperation注解的类，才生成接口文档
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                //包下的类，才生成接口文档
+                //.apis(RequestHandlerSelectors.basePackage("io.jbpntroller"))
+                .paths(PathSelectors.any())
+                .build()
+                .securitySchemes(security());
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("人人开源")
-            .description("jbp-api文档")
-            .termsOfServiceUrl("https://www.renren.io")
-            .version("4.0.0")
-            .build();
+                .title("人人开源")
+                .description("jbp-api文档")
+                .termsOfServiceUrl("https://www.renren.io")
+                .version("4.0.0")
+                .build();
     }
 
     private List<ApiKey> security() {
         return newArrayList(
-            new ApiKey("token", "token", "header")
+                new ApiKey("token", "token", "header")
         );
     }
 

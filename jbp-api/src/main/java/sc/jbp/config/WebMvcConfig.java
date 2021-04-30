@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.config;
 
@@ -14,8 +14,8 @@ import java.util.List;
 
 /**
  * MVC配置
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {

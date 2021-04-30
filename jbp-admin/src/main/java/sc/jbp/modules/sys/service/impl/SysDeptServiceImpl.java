@@ -16,41 +16,41 @@ import java.util.Map;
 
 @Service("sysDeptService")
 public class SysDeptServiceImpl extends ServiceImpl<SysDeptDao, SysDeptEntity> implements SysDeptService {
-	
-	@Override
-	@DataFilter(subDept = true, user = false, tableAlias = "t1")
-	public List<SysDeptEntity> queryList(Map<String, Object> params){
-		return baseMapper.queryList(params);
-	}
 
-	@Override
-	public List<Long> queryDetpIdList(Long parentId) {
-		return baseMapper.queryDetpIdList(parentId);
-	}
+    @Override
+    @DataFilter(subDept = true, user = false, tableAlias = "t1")
+    public List<SysDeptEntity> queryList(Map<String, Object> params) {
+        return baseMapper.queryList(params);
+    }
 
-	@Override
-	public List<Long> getSubDeptIdList(Long deptId){
-		//部门及子部门ID列表
-		List<Long> deptIdList = new ArrayList<>();
+    @Override
+    public List<Long> queryDetpIdList(Long parentId) {
+        return baseMapper.queryDetpIdList(parentId);
+    }
 
-		//获取子部门ID
-		List<Long> subIdList = queryDetpIdList(deptId);
-		getDeptTreeList(subIdList, deptIdList);
+    @Override
+    public List<Long> getSubDeptIdList(Long deptId) {
+        //部门及子部门ID列表
+        List<Long> deptIdList = new ArrayList<>();
 
-		return deptIdList;
-	}
+        //获取子部门ID
+        List<Long> subIdList = queryDetpIdList(deptId);
+        getDeptTreeList(subIdList, deptIdList);
 
-	/**
-	 * 递归
-	 */
-	private void getDeptTreeList(List<Long> subIdList, List<Long> deptIdList){
-		for(Long deptId : subIdList){
-			List<Long> list = queryDetpIdList(deptId);
-			if(list.size() > 0){
-				getDeptTreeList(list, deptIdList);
-			}
+        return deptIdList;
+    }
 
-			deptIdList.add(deptId);
-		}
-	}
+    /**
+     * 递归
+     */
+    private void getDeptTreeList(List<Long> subIdList, List<Long> deptIdList) {
+        for (Long deptId : subIdList) {
+            List<Long> list = queryDetpIdList(deptId);
+            if (list.size() > 0) {
+                getDeptTreeList(list, deptIdList);
+            }
+
+            deptIdList.add(deptId);
+        }
+    }
 }

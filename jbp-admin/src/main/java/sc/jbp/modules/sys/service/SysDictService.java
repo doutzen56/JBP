@@ -10,8 +10,8 @@ import java.util.Map;
 
 /**
  * 数据字典
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 public interface SysDictService extends IService<SysDictEntity> {
 

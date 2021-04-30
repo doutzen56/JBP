@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.modules.sys.controller;
 
@@ -9,21 +9,21 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Controller公共组件
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 public abstract class AbstractController {
-	protected Logger logger = LoggerFactory.getLogger(getClass());
-	
-	protected SysUserEntity getUser() {
-		return (SysUserEntity) SecurityUtils.getSubject().getPrincipal();
-	}
+    protected Logger logger = LoggerFactory.getLogger(getClass());
 
-	protected Long getUserId() {
-		return getUser().getUserId();
-	}
+    protected SysUserEntity getUser() {
+        return (SysUserEntity) SecurityUtils.getSubject().getPrincipal();
+    }
 
-	protected Long getDeptId() {
-		return getUser().getDeptId();
-	}
+    protected Long getUserId() {
+        return getUser().getUserId();
+    }
+
+    protected Long getDeptId() {
+        return getUser().getDeptId();
+    }
 }

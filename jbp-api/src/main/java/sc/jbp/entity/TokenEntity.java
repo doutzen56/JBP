@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.entity;
 
@@ -11,30 +11,29 @@ import java.io.Serializable;
 import java.util.Date;
 
 
-
 /**
  * 用户Token
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Data
 @TableName("tb_token")
 public class TokenEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * 用户ID
-	 */
-	@TableId(type= IdType.INPUT)
-	private Long userId;
-	private String token;
-	/**
-	 * 过期时间
-	 */
-	private Date expireTime;
-	/**
-	 * 更新时间
-	 */
-	private Date updateTime;
+    /**
+     * 用户ID
+     */
+    @TableId(type = IdType.INPUT)
+    private Long userId;
+    private String token;
+    /**
+     * 过期时间
+     */
+    private Date expireTime;
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
 
 }

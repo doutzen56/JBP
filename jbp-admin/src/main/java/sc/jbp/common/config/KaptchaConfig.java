@@ -13,8 +13,8 @@ import java.util.Properties;
 
 /**
  * 生成验证码配置
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Configuration
 public class KaptchaConfig {
@@ -35,7 +35,7 @@ public class KaptchaConfig {
     }
 
     @Bean
-    public CodeCreator CodeCreator(){
+    public CodeCreator CodeCreator() {
         return new CodeCreator();
     }
 }

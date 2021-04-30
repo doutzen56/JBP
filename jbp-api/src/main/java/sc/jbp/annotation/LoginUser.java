@@ -9,8 +9,8 @@ import java.lang.annotation.Target;
 
 /**
  * 登录用户信息
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)

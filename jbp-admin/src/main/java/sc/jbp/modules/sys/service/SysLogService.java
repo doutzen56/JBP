@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.modules.sys.service;
 
@@ -12,8 +12,8 @@ import java.util.Map;
 
 /**
  * 系统日志
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 public interface SysLogService extends IService<SysLogEntity> {
 

@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.interceptor;
 
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 权限(Token)验证
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Component
 public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
@@ -31,31 +31,31 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Login annotation;
-        if(handler instanceof HandlerMethod) {
+        if (handler instanceof HandlerMethod) {
             annotation = ((HandlerMethod) handler).getMethodAnnotation(Login.class);
-        }else{
+        } else {
             return true;
         }
 
-        if(annotation == null){
+        if (annotation == null) {
             return true;
         }
 
         //从header中获取token
         String token = request.getHeader("token");
         //如果header中不存在token，则从参数中获取token
-        if(StringUtils.isBlank(token)){
+        if (StringUtils.isBlank(token)) {
             token = request.getParameter("token");
         }
 
         //token为空
-        if(StringUtils.isBlank(token)){
+        if (StringUtils.isBlank(token)) {
             throw new RRException("token不能为空");
         }
 
         //查询token信息
         TokenEntity tokenEntity = tokenService.queryByToken(token);
-        if(tokenEntity == null || tokenEntity.getExpireTime().getTime() < System.currentTimeMillis()){
+        if (tokenEntity == null || tokenEntity.getExpireTime().getTime() < System.currentTimeMillis()) {
             throw new RRException("token失效，请重新登录");
         }
 

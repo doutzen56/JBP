@@ -7,11 +7,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * MySQL代码生成器
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Mapper
 public interface MySQLGeneratorDao extends GeneratorDao {
-	
+
 
 }

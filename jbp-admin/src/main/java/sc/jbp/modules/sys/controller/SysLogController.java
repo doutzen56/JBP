@@ -17,25 +17,25 @@ import java.util.Map;
 
 /**
  * 系统日志
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Controller
 @RequestMapping("/sys/log")
 public class SysLogController {
-	@Autowired
-	private SysLogService sysLogService;
-	
-	/**
-	 * 列表
-	 */
-	@ResponseBody
-	@RequestMapping("/list")
-	@RequiresPermissions("sys:log:list")
-	public R list(@RequestParam Map<String, Object> params){
-		PageUtils page = sysLogService.queryPage(params);
+    @Autowired
+    private SysLogService sysLogService;
 
-		return R.ok().put("page", page);
-	}
-	
+    /**
+     * 列表
+     */
+    @ResponseBody
+    @RequestMapping("/list")
+    @RequiresPermissions("sys:log:list")
+    public R list(@RequestParam Map<String, Object> params) {
+        PageUtils page = sysLogService.queryPage(params);
+
+        return R.ok().put("page", page);
+    }
+
 }

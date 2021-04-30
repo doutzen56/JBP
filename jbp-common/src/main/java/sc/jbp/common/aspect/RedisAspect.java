@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.common.aspect;
 
@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component;
 
 /**
  * Redis切面处理类
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Aspect
 @Component
@@ -29,10 +29,10 @@ public class RedisAspect {
     @Around("execution(* sc.jbp.common.utils.RedisUtils.*(..))")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         Object result = null;
-        if(open){
-            try{
+        if (open) {
+            try {
                 result = point.proceed();
-            }catch (Exception e){
+            } catch (Exception e) {
                 logger.error("redis error", e);
                 throw new RRException("Redis服务异常");
             }

@@ -21,12 +21,12 @@ public class SysDictServiceImpl extends ServiceImpl<SysDictDao, SysDictEntity> i
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        String name = (String)params.get("name");
+        String name = (String) params.get("name");
 
         IPage<SysDictEntity> page = this.page(
-            new Query<SysDictEntity>().getPage(params),
-            new QueryWrapper<SysDictEntity>()
-                .like(StringUtils.isNotBlank(name),"name", name)
+                new Query<SysDictEntity>().getPage(params),
+                new QueryWrapper<SysDictEntity>()
+                        .like(StringUtils.isNotBlank(name), "name", name)
         );
 
         return new PageUtils(page);

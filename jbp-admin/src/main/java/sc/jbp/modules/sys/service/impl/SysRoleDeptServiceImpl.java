@@ -14,39 +14,39 @@ import java.util.List;
 
 /**
  * 角色与部门对应关系
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Service("sysRoleDeptService")
 public class SysRoleDeptServiceImpl extends ServiceImpl<SysRoleDeptDao, SysRoleDeptEntity> implements SysRoleDeptService {
 
-	@Override
-	@Transactional(rollbackFor = Exception.class)
-	public void saveOrUpdate(Long roleId, List<Long> deptIdList) {
-		//先删除角色与部门关系
-		deleteBatch(new Long[]{roleId});
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void saveOrUpdate(Long roleId, List<Long> deptIdList) {
+        //先删除角色与部门关系
+        deleteBatch(new Long[]{roleId});
 
-		if(deptIdList.size() == 0){
-			return ;
-		}
+        if (deptIdList.size() == 0) {
+            return;
+        }
 
-		//保存角色与菜单关系
-		for(Long deptId : deptIdList){
-			SysRoleDeptEntity sysRoleDeptEntity = new SysRoleDeptEntity();
-			sysRoleDeptEntity.setDeptId(deptId);
-			sysRoleDeptEntity.setRoleId(roleId);
+        //保存角色与菜单关系
+        for (Long deptId : deptIdList) {
+            SysRoleDeptEntity sysRoleDeptEntity = new SysRoleDeptEntity();
+            sysRoleDeptEntity.setDeptId(deptId);
+            sysRoleDeptEntity.setRoleId(roleId);
 
-			this.save(sysRoleDeptEntity);
-		}
-	}
+            this.save(sysRoleDeptEntity);
+        }
+    }
 
-	@Override
-	public List<Long> queryDeptIdList(Long[] roleIds) {
-		return baseMapper.queryDeptIdList(roleIds);
-	}
+    @Override
+    public List<Long> queryDeptIdList(Long[] roleIds) {
+        return baseMapper.queryDeptIdList(roleIds);
+    }
 
-	@Override
-	public int deleteBatch(Long[] roleIds){
-		return baseMapper.deleteBatch(roleIds);
-	}
+    @Override
+    public int deleteBatch(Long[] roleIds) {
+        return baseMapper.deleteBatch(roleIds);
+    }
 }

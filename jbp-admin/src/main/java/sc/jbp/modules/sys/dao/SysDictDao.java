@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.modules.sys.dao;
 
@@ -8,10 +8,10 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 数据字典
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Mapper
 public interface SysDictDao extends BaseMapper<SysDictEntity> {
-	
+
 }

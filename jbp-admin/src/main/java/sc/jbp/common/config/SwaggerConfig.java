@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.common.config;
 
@@ -15,33 +15,33 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Swagger配置
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig{
+public class SwaggerConfig {
 
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-            .apiInfo(apiInfo())
-            .select()
-            //加了ApiOperation注解的类，生成接口文档
-            .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-            //包下的类，生成接口文档
-            //.apis(RequestHandlerSelectors.basePackage("io.jbpdules.job.controller"))
-            .paths(PathSelectors.any())
-            .build();
+                .apiInfo(apiInfo())
+                .select()
+                //加了ApiOperation注解的类，生成接口文档
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                //包下的类，生成接口文档
+                //.apis(RequestHandlerSelectors.basePackage("io.jbpdules.job.controller"))
+                .paths(PathSelectors.any())
+                .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("jbp")
-            .description("jbp-admin文档")
-            .termsOfServiceUrl("https://github.com/doutzen56")
-            .version("4.0.0")
-            .build();
+                .title("jbp")
+                .description("jbp-admin文档")
+                .termsOfServiceUrl("https://github.com/doutzen56")
+                .version("4.0.0")
+                .build();
     }
 
 }

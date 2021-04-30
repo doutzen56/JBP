@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.entity;
 
@@ -12,39 +12,38 @@ import java.io.Serializable;
 import java.util.Date;
 
 
-
 /**
  * 用户
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Data
 @TableName("tb_user")
 public class UserEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * 用户ID
-	 */
-	@TableId
-	private Long userId;
-	/**
-	 * 用户名
-	 */
-	private String username;
-	/**
-	 * 手机号
-	 */
-	private String mobile;
-	/**
-	 * 密码
-	 */
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-	private String password;
-	/**
-	 * 创建时间
-	 */
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-	private Date createTime;
+    /**
+     * 用户ID
+     */
+    @TableId
+    private Long userId;
+    /**
+     * 用户名
+     */
+    private String username;
+    /**
+     * 手机号
+     */
+    private String mobile;
+    /**
+     * 密码
+     */
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String password;
+    /**
+     * 创建时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date createTime;
 
 }

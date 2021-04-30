@@ -1,5 +1,4 @@
-
-$(function() {
+$(function () {
     $(window).on('resize', function () {
         var $content = $('#larry-tab .layui-tab-content');
         $content.height($(this).height() - 140);
@@ -32,7 +31,7 @@ var menuItem = Vue.extend({
 
 //注册菜单组件
 Vue.component('menuItem', menuItem);
-isquery=true;
+isquery = true;
 var vm = new Vue({
     el: '#layui_layout',
     data: {
@@ -97,22 +96,22 @@ var vm = new Vue({
     created: function () {
         this.getMenuList();
         this.getUser();
-    },updated:function(){
+    }, updated: function () {
 
-        if($("#larry-side .layui-nav-item>a").length==0 || !isquery){
+        if ($("#larry-side .layui-nav-item>a").length == 0 || !isquery) {
             return;
         }
         console.log("执行")
-        isquery=false;
+        isquery = false;
         layui.config({
             base: 'statics/js/',
-        }).use(['navtab','layer'], function(){
+        }).use(['navtab', 'layer'], function () {
             window.jQuery = window.$ = layui.jquery;
             window.layer = layui.layer;
             var element = layui.element();
-            var  navtab = layui.navtab({
+            var navtab = layui.navtab({
                 elem: '.larry-tab-box',
-                closed:false
+                closed: false
             });
             $('#larry-nav-side').children('ul').find('li').each(function () {
                 var $this = $(this);

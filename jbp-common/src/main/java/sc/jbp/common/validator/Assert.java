@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.common.validator;
 
@@ -7,8 +7,8 @@ import org.apache.commons.lang.StringUtils;
 
 /**
  * 数据校验
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 public abstract class Assert {
 

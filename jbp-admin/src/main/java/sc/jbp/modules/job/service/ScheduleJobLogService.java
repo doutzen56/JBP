@@ -10,11 +10,11 @@ import java.util.Map;
 
 /**
  * 定时任务日志
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 public interface ScheduleJobLogService extends IService<ScheduleJobLogEntity> {
 
-	PageUtils queryPage(Map<String, Object> params);
-	
+    PageUtils queryPage(Map<String, Object> params);
+
 }

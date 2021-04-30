@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.controller;
 
@@ -20,19 +20,19 @@ import java.util.Date;
 
 /**
  * 注册接口
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @RestController
 @RequestMapping("/api")
-@Api(tags="注册接口")
+@Api(tags = "注册接口")
 public class ApiRegisterController {
     @Autowired
     private UserService userService;
 
     @PostMapping("register")
     @ApiOperation("注册")
-    public R register(@RequestBody RegisterForm form){
+    public R register(@RequestBody RegisterForm form) {
         //表单校验
         ValidatorUtils.validateEntity(form);
 

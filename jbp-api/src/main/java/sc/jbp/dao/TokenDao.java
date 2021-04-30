@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.dao;
 
@@ -8,10 +8,10 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 用户Token
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Mapper
 public interface TokenDao extends BaseMapper<TokenEntity> {
-	
+
 }

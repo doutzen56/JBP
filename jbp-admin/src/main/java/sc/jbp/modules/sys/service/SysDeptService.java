@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.modules.sys.service;
 
@@ -11,22 +11,23 @@ import java.util.Map;
 
 /**
  * 部门管理
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 public interface SysDeptService extends IService<SysDeptEntity> {
 
-	List<SysDeptEntity> queryList(Map<String, Object> map);
+    List<SysDeptEntity> queryList(Map<String, Object> map);
 
-	/**
-	 * 查询子部门ID列表
-	 * @param parentId  上级部门ID
-	 */
-	List<Long> queryDetpIdList(Long parentId);
+    /**
+     * 查询子部门ID列表
+     *
+     * @param parentId 上级部门ID
+     */
+    List<Long> queryDetpIdList(Long parentId);
 
-	/**
-	 * 获取子部门ID，用于数据过滤
-	 */
-	List<Long> getSubDeptIdList(Long deptId);
+    /**
+     * 获取子部门ID，用于数据过滤
+     */
+    List<Long> getSubDeptIdList(Long deptId);
 
 }

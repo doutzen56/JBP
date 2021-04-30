@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.modules.job.task;
 
@@ -8,17 +8,17 @@ import org.springframework.stereotype.Component;
 
 /**
  * 测试定时任务(演示Demo，可删除)
- *
+ * <p>
  * testTask为spring bean的名称
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Component("testTask")
 public class TestTask implements ITask {
-	private Logger logger = LoggerFactory.getLogger(getClass());
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
-	@Override
-	public void run(String params){
-		logger.debug("TestTask定时任务正在执行，参数为：{}", params);
-	}
+    @Override
+    public void run(String params) {
+        logger.debug("TestTask定时任务正在执行，参数为：{}", params);
+    }
 }

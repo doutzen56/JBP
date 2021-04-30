@@ -29,13 +29,13 @@ public class RemoveDruidAdConfig {
     /**
      * 方法名: removeDruidAdFilterRegistrationBean
      * 方法描述:  除去页面底部的广告
+     *
      * @param properties
      * @return org.springframework.boot.web.servlet.FilterRegistrationBean
      * @throws
      */
     @Bean
-    public FilterRegistrationBean removeDruidAdFilterRegistrationBean(DruidStatProperties properties)
-    {
+    public FilterRegistrationBean removeDruidAdFilterRegistrationBean(DruidStatProperties properties) {
         // 获取web监控页面的参数
         DruidStatProperties.StatViewServlet config = properties.getStatViewServlet();
         // 提取common.js的配置路径

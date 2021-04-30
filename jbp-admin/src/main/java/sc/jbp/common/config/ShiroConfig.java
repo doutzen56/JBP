@@ -21,8 +21,8 @@ import java.util.Map;
 
 /**
  * Shiro的配置文件
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Configuration
 public class ShiroConfig {
@@ -32,7 +32,7 @@ public class ShiroConfig {
      */
     @Bean
     @ConditionalOnProperty(prefix = "jbp", name = "cluster", havingValue = "false")
-    public DefaultWebSessionManager sessionManager(@Value("${jbp.globalSessionTimeout:3600}") long globalSessionTimeout){
+    public DefaultWebSessionManager sessionManager(@Value("${jbp.globalSessionTimeout:3600}") long globalSessionTimeout) {
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
         sessionManager.setSessionValidationSchedulerEnabled(true);
         sessionManager.setSessionIdUrlRewritingEnabled(false);

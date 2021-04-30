@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.service;
 
@@ -7,24 +7,26 @@ import sc.jbp.entity.TokenEntity;
 
 /**
  * 用户Token
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 public interface TokenService extends IService<TokenEntity> {
 
-	TokenEntity queryByToken(String token);
+    TokenEntity queryByToken(String token);
 
-	/**
-	 * 生成token
-	 * @param userId  用户ID
-	 * @return        返回token信息
-	 */
-	TokenEntity createToken(long userId);
+    /**
+     * 生成token
+     *
+     * @param userId 用户ID
+     * @return 返回token信息
+     */
+    TokenEntity createToken(long userId);
 
-	/**
-	 * 设置token过期
-	 * @param userId 用户ID
-	 */
-	void expireToken(long userId);
+    /**
+     * 设置token过期
+     *
+     * @param userId 用户ID
+     */
+    void expireToken(long userId);
 
 }

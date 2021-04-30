@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.modules.sys.shiro;
 
@@ -8,20 +8,21 @@ import org.springframework.stereotype.Component;
 
 /**
  * Shiro权限标签
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Component
 public class ShiroTag {
 
-	/**
-	 * 是否拥有该权限
-	 * @param permission  权限标识
-	 * @return   true：是     false：否
-	 */
-	public boolean hasPermission(String permission) {
-		Subject subject = SecurityUtils.getSubject();
-		return subject != null && subject.isPermitted(permission);
-	}
+    /**
+     * 是否拥有该权限
+     *
+     * @param permission 权限标识
+     * @return true：是     false：否
+     */
+    public boolean hasPermission(String permission) {
+        Subject subject = SecurityUtils.getSubject();
+        return subject != null && subject.isPermitted(permission);
+    }
 
 }

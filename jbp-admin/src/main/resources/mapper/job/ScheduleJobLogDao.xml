@@ -3,5 +3,5 @@
 
 <mapper namespace="sc.jbp.modules.job.dao.ScheduleJobLogDao">
 
-	
+
 </mapper>

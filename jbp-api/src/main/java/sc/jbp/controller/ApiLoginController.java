@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.controller;
 
@@ -19,12 +19,12 @@ import java.util.Map;
 
 /**
  * 登录接口
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @RestController
 @RequestMapping("/api")
-@Api(tags="登录接口")
+@Api(tags = "登录接口")
 public class ApiLoginController {
     @Autowired
     private UserService userService;
@@ -34,7 +34,7 @@ public class ApiLoginController {
 
     @PostMapping("login")
     @ApiOperation("登录")
-    public R login(@RequestBody LoginForm form){
+    public R login(@RequestBody LoginForm form) {
         //表单校验
         ValidatorUtils.validateEntity(form);
 
@@ -47,7 +47,7 @@ public class ApiLoginController {
     @Login
     @PostMapping("logout")
     @ApiOperation("退出")
-    public R logout(@ApiIgnore @RequestAttribute("userId") long userId){
+    public R logout(@ApiIgnore @RequestAttribute("userId") long userId) {
         tokenService.expireToken(userId);
         return R.ok();
     }

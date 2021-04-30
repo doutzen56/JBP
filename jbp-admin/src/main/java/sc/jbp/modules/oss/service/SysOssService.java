@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.modules.oss.service;
 
@@ -10,10 +10,10 @@ import java.util.Map;
 
 /**
  * 文件上传
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 public interface SysOssService extends IService<SysOssEntity> {
 
-	PageUtils queryPage(Map<String, Object> params);
+    PageUtils queryPage(Map<String, Object> params);
 }

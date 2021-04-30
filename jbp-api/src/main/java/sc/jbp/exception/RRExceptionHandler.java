@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.exception;
 
@@ -12,34 +12,34 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
  * 异常处理器
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @RestControllerAdvice
 public class RRExceptionHandler {
-	private Logger logger = LoggerFactory.getLogger(getClass());
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
-	/**
-	 * 处理自定义异常
-	 */
-	@ExceptionHandler(RRException.class)
-	public R handleRRException(RRException e){
-		R r = new R();
-		r.put("code", e.getCode());
-		r.put("msg", e.getMessage());
+    /**
+     * 处理自定义异常
+     */
+    @ExceptionHandler(RRException.class)
+    public R handleRRException(RRException e) {
+        R r = new R();
+        r.put("code", e.getCode());
+        r.put("msg", e.getMessage());
 
-		return r;
-	}
+        return r;
+    }
 
-	@ExceptionHandler(DuplicateKeyException.class)
-	public R handleDuplicateKeyException(DuplicateKeyException e){
-		logger.error(e.getMessage(), e);
-		return R.error("数据库中已存在该记录");
-	}
+    @ExceptionHandler(DuplicateKeyException.class)
+    public R handleDuplicateKeyException(DuplicateKeyException e) {
+        logger.error(e.getMessage(), e);
+        return R.error("数据库中已存在该记录");
+    }
 
-	@ExceptionHandler(Exception.class)
-	public R handleException(Exception e){
-		logger.error(e.getMessage(), e);
-		return R.error();
-	}
+    @ExceptionHandler(Exception.class)
+    public R handleException(Exception e) {
+        logger.error(e.getMessage(), e);
+        return R.error();
+    }
 }

@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.common.annotation;
 
@@ -10,13 +10,13 @@ import java.lang.annotation.Target;
 
 /**
  * 系统日志注解
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface SysLog {
 
-	String value() default "";
+    String value() default "";
 }

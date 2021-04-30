@@ -10,14 +10,14 @@ import java.util.Map;
 
 /**
  * 定时任务
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Mapper
 public interface ScheduleJobDao extends BaseMapper<ScheduleJobEntity> {
-	
-	/**
-	 * 批量更新状态
-	 */
-	int updateBatch(Map<String, Object> map);
+
+    /**
+     * 批量更新状态
+     */
+    int updateBatch(Map<String, Object> map);
 }

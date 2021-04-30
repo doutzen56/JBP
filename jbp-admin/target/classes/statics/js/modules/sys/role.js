@@ -3,35 +3,35 @@ $(function () {
         url: baseURL + 'sys/role/list',
         datatype: "json",
         colModel: [
-            { label: '角色ID', name: 'roleId', index: "role_id", width: 45, key: true },
-            { label: '角色名称', name: 'roleName', index: "role_name", width: 75 },
-            { label: '所属部门', name: 'deptName', sortable: false, width: 75 },
-            { label: '备注', name: 'remark', width: 100 },
-            { label: '创建时间', name: 'createTime', index: "create_time", width: 80}
+            {label: '角色ID', name: 'roleId', index: "role_id", width: 45, key: true},
+            {label: '角色名称', name: 'roleName', index: "role_name", width: 75},
+            {label: '所属部门', name: 'deptName', sortable: false, width: 75},
+            {label: '备注', name: 'remark', width: 100},
+            {label: '创建时间', name: 'createTime', index: "create_time", width: 80}
         ],
         viewrecords: true,
         height: 385,
         rowNum: 10,
-        rowList : [10,30,50],
+        rowList: [10, 30, 50],
         rownumbers: true,
         rownumWidth: 25,
-        autowidth:true,
+        autowidth: true,
         multiselect: true,
         pager: "#jqGridPager",
-        jsonReader : {
+        jsonReader: {
             root: "page.list",
             page: "page.currPage",
             total: "page.totalPage",
             records: "page.totalCount"
         },
-        prmNames : {
-            page:"page",
-            rows:"limit",
+        prmNames: {
+            page: "page",
+            rows: "limit",
             order: "order"
         },
-        gridComplete:function(){
+        gridComplete: function () {
             //隐藏grid底部滚动条
-            $("#jqGrid").closest(".ui-jqgrid-bdiv").css({ "overflow-x" : "hidden" });
+            $("#jqGrid").closest(".ui-jqgrid-bdiv").css({"overflow-x": "hidden"});
         }
     });
 });
@@ -47,12 +47,12 @@ var menu_setting = {
             rootPId: -1
         },
         key: {
-            url:"nourl"
+            url: "nourl"
         }
     },
-    check:{
-        enable:true,
-        nocheckInherit:true
+    check: {
+        enable: true,
+        nocheckInherit: true
     }
 };
 
@@ -67,7 +67,7 @@ var dept_setting = {
             rootPId: -1
         },
         key: {
-            url:"nourl"
+            url: "nourl"
         }
     }
 };
@@ -83,37 +83,37 @@ var data_setting = {
             rootPId: -1
         },
         key: {
-            url:"nourl"
+            url: "nourl"
         }
     },
-    check:{
-        enable:true,
-        nocheckInherit:true,
-        chkboxType:{ "Y" : "", "N" : "" }
+    check: {
+        enable: true,
+        nocheckInherit: true,
+        chkboxType: {"Y": "", "N": ""}
     }
 };
 
 var vm = new Vue({
-    el:'#rrapp',
-    data:{
-        q:{
+    el: '#rrapp',
+    data: {
+        q: {
             roleName: null
         },
         showList: true,
-        title:null,
-        role:{
-            deptId:null,
-            deptName:null
+        title: null,
+        role: {
+            deptId: null,
+            deptName: null
         }
     },
     methods: {
         query: function () {
             vm.reload();
         },
-        add: function(){
+        add: function () {
             vm.showList = false;
             vm.title = "新增";
-            vm.role = {deptName:null, deptId:null};
+            vm.role = {deptName: null, deptId: null};
             vm.getMenuTree(null);
 
             vm.getDept();
@@ -122,8 +122,8 @@ var vm = new Vue({
         },
         update: function () {
             var roleId = getSelectedRow();
-            if(roleId == null){
-                return ;
+            if (roleId == null) {
+                return;
             }
 
             vm.showList = false;
@@ -135,42 +135,42 @@ var vm = new Vue({
         },
         del: function () {
             var roleIds = getSelectedRows();
-            if(roleIds == null){
-                return ;
+            if (roleIds == null) {
+                return;
             }
 
-            confirm('确定要删除选中的记录？', function(){
+            confirm('确定要删除选中的记录？', function () {
                 $.ajax({
                     type: "POST",
                     url: baseURL + "sys/role/delete",
                     contentType: "application/json",
                     data: JSON.stringify(roleIds),
-                    success: function(r){
-                        if(r.code == 0){
-                            alert('操作成功', function(){
+                    success: function (r) {
+                        if (r.code == 0) {
+                            alert('操作成功', function () {
                                 vm.reload();
                             });
-                        }else{
+                        } else {
                             alert(r.msg);
                         }
                     }
                 });
             });
         },
-        getRole: function(roleId){
-            $.get(baseURL + "sys/role/info/"+roleId, function(r){
+        getRole: function (roleId) {
+            $.get(baseURL + "sys/role/info/" + roleId, function (r) {
                 vm.role = r.role;
 
                 //勾选角色所拥有的菜单
                 var menuIds = vm.role.menuIdList;
-                for(var i=0; i<menuIds.length; i++) {
+                for (var i = 0; i < menuIds.length; i++) {
                     var node = menu_ztree.getNodeByParam("menuId", menuIds[i]);
                     menu_ztree.checkNode(node, true, false);
                 }
 
                 //勾选角色所拥有的部门数据权限
                 var deptIds = vm.role.deptIdList;
-                for(var i=0; i<deptIds.length; i++) {
+                for (var i = 0; i < deptIds.length; i++) {
                     var node = data_ztree.getNodeByParam("deptId", deptIds[i]);
                     data_ztree.checkNode(node, true, false);
                 }
@@ -182,7 +182,7 @@ var vm = new Vue({
             //获取选择的菜单
             var nodes = menu_ztree.getCheckedNodes(true);
             var menuIdList = new Array();
-            for(var i=0; i<nodes.length; i++) {
+            for (var i = 0; i < nodes.length; i++) {
                 menuIdList.push(nodes[i].menuId);
             }
             vm.role.menuIdList = menuIdList;
@@ -190,7 +190,7 @@ var vm = new Vue({
             //获取选择的数据
             var nodes = data_ztree.getCheckedNodes(true);
             var deptIdList = new Array();
-            for(var i=0; i<nodes.length; i++) {
+            for (var i = 0; i < nodes.length; i++) {
                 deptIdList.push(nodes[i].deptId);
             }
             vm.role.deptIdList = deptIdList;
@@ -201,50 +201,50 @@ var vm = new Vue({
                 url: baseURL + url,
                 contentType: "application/json",
                 data: JSON.stringify(vm.role),
-                success: function(r){
-                    if(r.code === 0){
-                        alert('操作成功', function(){
+                success: function (r) {
+                    if (r.code === 0) {
+                        alert('操作成功', function () {
                             vm.reload();
                         });
-                    }else{
+                    } else {
                         alert(r.msg);
                     }
                 }
             });
         },
-        getMenuTree: function(roleId) {
+        getMenuTree: function (roleId) {
             //加载菜单树
-            $.get(baseURL + "sys/menu/list", function(r){
+            $.get(baseURL + "sys/menu/list", function (r) {
                 menu_ztree = $.fn.zTree.init($("#menuTree"), menu_setting, r);
                 //展开所有节点
                 menu_ztree.expandAll(true);
 
-                if(roleId != null){
+                if (roleId != null) {
                     vm.getRole(roleId);
                 }
             });
         },
-        getDataTree: function(roleId) {
+        getDataTree: function (roleId) {
             //加载菜单树
-            $.get(baseURL + "sys/dept/list", function(r){
+            $.get(baseURL + "sys/dept/list", function (r) {
                 data_ztree = $.fn.zTree.init($("#dataTree"), data_setting, r);
                 //展开所有节点
                 data_ztree.expandAll(true);
             });
         },
-        getDept: function(){
+        getDept: function () {
             //加载部门树
-            $.get(baseURL + "sys/dept/list", function(r){
+            $.get(baseURL + "sys/dept/list", function (r) {
                 dept_ztree = $.fn.zTree.init($("#deptTree"), dept_setting, r);
                 var node = dept_ztree.getNodeByParam("deptId", vm.role.deptId);
-                if(node != null){
+                if (node != null) {
                     dept_ztree.selectNode(node);
 
                     vm.role.deptName = node.name;
                 }
             })
         },
-        deptTree: function(){
+        deptTree: function () {
             layer.open({
                 type: 1,
                 offset: '50px',
@@ -267,10 +267,10 @@ var vm = new Vue({
         },
         reload: function () {
             vm.showList = true;
-            var page = $("#jqGrid").jqGrid('getGridParam','page');
-            $("#jqGrid").jqGrid('setGridParam',{
-                postData:{'roleName': vm.q.roleName},
-                page:page
+            var page = $("#jqGrid").jqGrid('getGridParam', 'page');
+            $("#jqGrid").jqGrid('setGridParam', {
+                postData: {'roleName': vm.q.roleName},
+                page: page
             }).trigger("reloadGrid");
         }
     }

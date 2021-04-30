@@ -8,11 +8,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 角色管理
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Mapper
 public interface SysRoleDao extends BaseMapper<SysRoleEntity> {
-	
+
 
 }

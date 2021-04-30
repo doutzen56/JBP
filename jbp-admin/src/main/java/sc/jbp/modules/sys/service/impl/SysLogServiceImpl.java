@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.modules.sys.service.impl;
 
@@ -21,11 +21,11 @@ public class SysLogServiceImpl extends ServiceImpl<SysLogDao, SysLogEntity> impl
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        String key = (String)params.get("key");
+        String key = (String) params.get("key");
 
         IPage<SysLogEntity> page = this.page(
-            new Query<SysLogEntity>().getPage(params),
-            new QueryWrapper<SysLogEntity>().like(StringUtils.isNotBlank(key),"username", key)
+                new Query<SysLogEntity>().getPage(params),
+                new QueryWrapper<SysLogEntity>().like(StringUtils.isNotBlank(key), "username", key)
         );
 
         return new PageUtils(page);

@@ -1,4 +1,4 @@
-    
+
 
 package sc.jbp.common.config;
 
@@ -13,14 +13,14 @@ import java.util.Properties;
 
 /**
  * Freemarker配置
- *
- *  tzen@e-veb.com
+ * <p>
+ * tzen@e-veb.com
  */
 @Configuration
 public class FreemarkerConfig {
 
     @Bean
-    public FreeMarkerConfigurer freeMarkerConfigurer(ShiroTag shiroTag){
+    public FreeMarkerConfigurer freeMarkerConfigurer(ShiroTag shiroTag) {
         FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
         configurer.setTemplateLoaderPath("classpath:/templates");
         Map<String, Object> variables = new HashMap<>(1);

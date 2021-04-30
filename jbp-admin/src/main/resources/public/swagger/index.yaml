@@ -1019,15 +1019,15 @@ paths:
 #定义数据模型
 definitions:
   R:
-      type: object
-      properties:
-        code:
-          description: 状态码 0：成功  非0：失败
-          type: integer
-          format: int32
-        msg:
-          description: 失败原因
-          type: string
+    type: object
+    properties:
+      code:
+        description: 状态码 0：成功  非0：失败
+        type: integer
+        format: int32
+      msg:
+        description: 失败原因
+        type: string
   SysUserEntity:
     type: object
     properties:
@@ -1073,38 +1073,38 @@ definitions:
         type: string
         format: date-time
   SysUserEntityEdit:
-      type: object
-      properties:
-        userId:
-          description: 用户ID
-          type: integer
-          format: int64
-        username:
-          description: 用户名
-          type: string
-        deptId:
-          description: 部门ID
-          type: integer
-          format: int64
-        password:
-          description: 密码
-          type: string
-        email:
-          description: 邮箱
-          type: string
-        mobile:
-          description: 手机号
-          type: string
-        status:
-          description: 状态  0：禁用   1：正常
+    type: object
+    properties:
+      userId:
+        description: 用户ID
+        type: integer
+        format: int64
+      username:
+        description: 用户名
+        type: string
+      deptId:
+        description: 部门ID
+        type: integer
+        format: int64
+      password:
+        description: 密码
+        type: string
+      email:
+        description: 邮箱
+        type: string
+      mobile:
+        description: 手机号
+        type: string
+      status:
+        description: 状态  0：禁用   1：正常
+        type: integer
+        format: int32
+      roleIdList:
+        description: 角色ID列表
+        type: array
+        items:
           type: integer
           format: int32
-        roleIdList:
-          description: 角色ID列表
-          type: array
-          items:
-            type: integer
-            format: int32
   SysDeptEntity:
     type: object
     properties:
